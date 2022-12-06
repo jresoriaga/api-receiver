@@ -37,23 +37,23 @@ class ApiController extends Controller
         // ]);
         // }
         $user = file_get_contents('http://127.0.0.1:8000/api/moodle');
-        $data = Api::create([$user]);
+        // $data = Api::create([$user]);
 
 
-        if(!$data)
-        {
-        return response()->json([
-            'status' => 400,
-            'error' => 'something went wrong'
-        ]);
-        } else
-        {
-        return response()->json([
-            'status' => 200,
-            'success' => 'Update Success!'
-        ]);
-        }
+        // if(!$data)
+        // {
+        // return response()->json([
+        //     'status' => 400,
+        //     'error' => 'something went wrong'
+        // ]);
+        // } else
+        // {
+        // return response()->json([
+        //     'status' => 200,
+        //     'success' => 'Update Success!'
+        // ]);
+        // }
 
-        // return json_decode($data,true);  
+        return json_decode($user,true);  
     }
 }
